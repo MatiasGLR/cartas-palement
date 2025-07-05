@@ -1,0 +1,255 @@
+/* styles.css */
+
+/* Definimos el tamaño de la carta */
+.showcard {
+    position: absolute;
+    transform: translateX(-10000px) translateY(-10000px);
+}
+
+.cards {
+    display:block;
+    width: 12.6cm; /* Ajusta según el tamaño que quieras */
+    height: 17.2cm; /* Ajusta según el tamaño que quieras */
+    position: relative; /* Necesario para el posicionamiento absoluto de las imágenes */
+    overflow: hidden; /* Oculta cualquier contenido fuera del contenedor */
+    text-align: center;
+    border:2px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Aseguramos que las imágenes ocupen todo el ancho de la carta */
+.cards img {
+    position: absolute; /* Permite que las imágenes se apilen */
+    left: 0; /* Alineación a la izquierda */
+    display: flex; /* Elimina el espacio extra debajo de las imágenes */
+}
+
+/* Posicionamos la imagen del marco superior */
+.marco-arriba {
+    top: 0; /* Justo en la parte superior de la carta */
+    z-index: 5; /* Asegura que el marco superior esté por encima del fondo */
+    width: 100%; /* Ocupa todo el ancho de la carta */
+}
+
+/* Posicionamos el fondo de la carta */
+.fondo-carta {
+    right:50px;
+    /* top: 90px; Justo después del marco superior */
+   /* object-fit:fill;  Asegura que el fondo cubra completamente el área */
+    z-index: 1; /* Fondo detrás de los marcos */
+    height: 100%;
+}
+
+.hechizocosto1, .hechizocosto2, .hechizocosto3 {
+    position: absolute; /* Posiciona el nombre sobre el marco superior */
+    z-index:9999;
+    width:3.5cm;
+    height:3.5cm;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: visible;
+}
+
+.hechizocosto1 {
+    top:62%;
+    left:25% !important;
+    transform: translateX(-50%);
+}
+
+.hechizocosto2 {
+    top:62%;
+    left:50% !important;
+    transform: translateX(-50%);
+}
+
+.hechizocosto3 {
+    top:62%;
+    left:75% !important;
+    transform: translateX(-50%);
+}
+
+.numero_costo {
+    font-size: 1.1cm;
+    transform: translate(-0.5%, 58%);
+    color:white;
+    text-shadow: 0px 0px 5px #000, 0px 0px 10px #000, 0px 0px 15px #000, 0px 0px 20px #000;
+}
+
+.nombre-carta {
+    position: absolute; /* Posiciona el nombre sobre el marco superior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    z-index: 15;  /* Asegura que el nombre esté por encima del marco superior */
+    font-family: 'Cinzel', serif;  /* Fuente medieval */
+    text-align: center;
+    font-weight: 200;
+    color: white;  /* Color blanco para el nombre */
+    max-width: 100%; /* No permite que el nombre ocupe más del 100% del contenedor */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta cualquier texto que sobrepase el área */
+    
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.circle-number {
+    display: inline-flex;              /* Cambiar a inline-flex para control total sobre alineación */
+    align-items: center;               /* Centra verticalmente el texto dentro del círculo */
+    justify-content: center;           /* Centra horizontalmente el texto dentro del círculo */
+    width: 24px;                       /* Ancho del círculo */
+    height: 24px;                      /* Alto del círculo */
+    border-radius: 50%;                /* Hace que el fondo sea circular */
+    text-align: center;                /* Centra el texto horizontalmente */
+    line-height: 24px;                 /* Alinea el número verticalmente en el centro */
+    color: white;                      /* Color del texto dentro del círculo */
+    font-size: 16px;                   /* Tamaño del número dentro del círculo */
+    margin-right: 4px;                 /* Espacio entre los números y el texto */
+}
+
+.texto-centro {
+    position: absolute; /* Necesario para que 'bottom' funcione */
+    bottom: 14%; /* Se coloca a 20px desde el borde inferior de la carta */
+    text-align: justify;
+    left: 20px; /* Puedes ajustar este valor según lo necesites */
+    right: 20px; /* Espacio a la derecha */
+    font-size: 16px;
+    justify-content: space-between; /* Esto separará los elementos en los extremos */
+    z-index: 50; /* Asegura que el texto esté por encima de las imágenes */
+    font-family:'Roboto';
+}
+
+.orange {
+    color: rgb(255, 0, 221);        /* Fondo amarillo para 'tr' */
+    font-weight: bold;
+    padding:2px;
+}
+
+.yellow {
+    color: yellow;        /* Fondo amarillo para 'tr' */
+    font-weight: bold;
+    padding:2px;
+}
+
+.white {
+    background-color: white;        /* Fondo amarillo para 'tr' */
+    font-weight: bold;
+    border:1px solid black;
+    padding:2px;
+}
+
+.green {
+    color: green;         /* Fondo verde para 'ti' */
+    font-weight: bold;
+    padding:2px;
+}
+
+.red {
+    color: #FF5733;       /* Fondo rojo anaranjado para 'fu' */
+    font-weight: bold;
+    padding:2px;
+}
+
+.purple {
+    color: #800080;       /* Fondo violeta para 'fa' */
+    font-weight: bold;
+    padding:2px;
+}
+
+.blue {
+    color: blue;          /* Fondo azul para 'ag' */
+    font-weight: bold;
+    padding:2px;
+}
+
+.highlighted-text {
+    border-radius: 4px;  /* Bordes redondeados */
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Posicionamos la imagen del marco inferior */
+.marco-abajo {
+    bottom: 0; /* Justo en la parte inferior de la carta */
+    left:0;
+    right:0;
+    z-index: 15; /* Asegura que el marco inferior esté por encima del fondo */
+    width: 100%; /* Ocupa todo el ancho de la carta */
+    margin: 0;  /* Eliminar cualquier margen */
+    padding: 0; /* Eliminar cualquier padding */
+    border: none; /* Eliminar cualquier borde */
+    overflow: hidden; /* Asegura que cualquier contenido desbordado se oculte */
+}
+
+.marco-fondo {
+    top: -260px; /* Justo en la parte inferior de la carta */
+    z-index: 5; /* Asegura que el marco inferior esté por encima del fondo */
+    opacity: .6;
+    width: 120%; /* Ocupa todo el ancho de la carta */
+    transform: translateY(-8px) translateX(-44px); /* Ajusta la posición para que quede en su lugar */
+}
+
+.clan-icono {
+    width: 12%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10.5%;
+    display: block;
+    margin: 0 auto;
+    z-index: 15;
+    border-radius: 100%;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
+}
+
+.marco-icono {
+    width: 15%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:87%;
+    display: block;
+    margin: 0 auto;
+    z-index: 15;
+    border-radius: 100%;
+}
+
+/* Estilo de los textos */
+h5 {
+    position: relative; /* Asegura que el texto se pueda apilar correctamente */
+    z-index: 20; /* Asegura que el texto esté por encima de las imágenes */
+    color: white; /* Color del texto */
+    font-size: 34px; /* Tamaño del texto */
+    margin: 0;
+    padding: 5px 0;
+    text-align: center; /* Centra el texto */
+}
+
+/* Clase que maneja la posición de los textos en la parte inferior */
+.texto-bajo {
+    position: absolute; /* Necesario para que 'bottom' funcione */
+    bottom: 4.5%; /* Se coloca a 20px desde el borde inferior de la carta */
+    left: 5px; /* Puedes ajustar este valor según lo necesites */
+    right: 5px; /* Espacio a la derecha */
+    display: flex;
+    justify-content: space-between; /* Esto separará los elementos en los extremos */
+    z-index: 30; /* Asegura que el texto esté por encima de las imágenes */
+}
+
+
+
+/* Si tienes más de un h5, esto los alinea */
+.texto-bajo h5 {
+    font-size: 20px; /* Tamaño del texto para que quepan bien en la parte inferior */
+    margin: 0;
+    color: white; /* Cambia el color del texto si lo necesitas */
+}
+
+.rareza {
+    position: absolute;
+    z-index:999;
+    font-size:60px;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    color:white;
+}
