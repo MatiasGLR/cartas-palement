@@ -21,7 +21,6 @@
 /* Aseguramos que las imágenes ocupen todo el ancho de la carta */
 .cards img {
     position: absolute; /* Permite que las imágenes se apilen */
-    left: 0; /* Alineación a la izquierda */
     display: flex; /* Elimina el espacio extra debajo de las imágenes */
 }
 
@@ -34,11 +33,10 @@
 
 /* Posicionamos el fondo de la carta */
 .fondo-carta {
-    right:50px;
-    /* top: 90px; Justo después del marco superior */
-   /* object-fit:fill;  Asegura que el fondo cubra completamente el área */
+    position: absolute;
+    top: 90px;
+    left:0px;
     z-index: 1; /* Fondo detrás de los marcos */
-    height: 100%;
 }
 
 .hechizocosto1, .hechizocosto2, .hechizocosto3 {

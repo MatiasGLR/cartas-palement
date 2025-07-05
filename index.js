@@ -177,6 +177,10 @@ function ajustarFondo() {
     const textoCentro = document.querySelector('.texto-centro');
     const fondo = document.querySelector('.marco-fondo');
 
+    document.querySelector(".fondo-carta").style.top = ""+document.querySelector("#ajuste_altura_imagen").value+"px";
+    document.querySelector(".fondo-carta").style.height = ""+document.querySelector("#ajuste_tamaño_imagen").value+"%";
+    document.querySelector(".fondo-carta").style.transform = `translateX(${document.querySelector("#ajuste_horizontal_imagen").value}px)`;
+
     if (textoCentro && fondo) {
         // Obtener la altura del contenido de texto
         const alturaTexto = textoCentro.offsetHeight;
@@ -188,6 +192,7 @@ function ajustarFondo() {
         if(document.querySelector(".hechizocosto2")) document.querySelector(".hechizocosto2").style.top = `calc(69% - ${alturaTexto}px)`; // Se sube a medida que el texto crece
         if(document.querySelector(".hechizocosto3")) document.querySelector(".hechizocosto3").style.top = `calc(69% - ${alturaTexto}px)`; // Se sube a medida que el texto crece
     }
+
 }
 
 function ajustarTexto() {
