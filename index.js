@@ -57,6 +57,15 @@ function crearcarta() {
             <div class="rareza" style="color:${color_nombre}">
                 ${rareza}
             </div>
+            ${costo_1_tipo != "" ? `
+                <div class="hechizocosto1" style="background-image: url('${costo_1_tipo}/hexagono.png')"><p class="numero_costo">${costo_1}</p></div>` : ``
+            }
+            ${costo_2_tipo != "" ? `
+                <div class="hechizocosto2" style="background-image: url('${costo_2_tipo}/hexagono.png')"><p class="numero_costo">${costo_2}</p></div>` : ``
+            }
+            ${costo_3_tipo != "" ? `
+                <div class="hechizocosto3" style="background-image: url('${costo_3_tipo}/hexagono.png')"><p class="numero_costo">${costo_3}</p></div>` : ``
+            }
             `
         }
     `;
@@ -71,43 +80,43 @@ function crearcarta() {
     const nombreCarta = document.querySelector(".nombre-carta");
     if (nombreCarta) {
         nombreCarta.style.color = color_nombre;  // Asigna el color directamente
-        nombreCarta.style.textShadow = `0px 0px 5px ${sombra}, 
-                                    0px 0px 10px ${sombra}, 
-                                    0px 0px 15px ${sombra}, 
-                                    0px 0px 20px ${sombra}`;  // Asigna el color directamente
+        nombreCarta.style.textShadow = `0px 0px 15px ${sombra}, 
+                                    0px 0px 30px ${sombra}, 
+                                    0px 0px 45px ${sombra}, 
+                                    0px 0px 60px ${sombra}`;  // Asigna el color directamente
 
     }
 
-    document.querySelector(".rareza").style.textShadow = `0px 0px 5px ${sombra}, 
-                                    0px 0px 10px ${sombra}, 
-                                    0px 0px 15px ${sombra}, 
-                                    0px 0px 20px ${sombra}`;  // Asigna el color directamente
+    document.querySelector(".rareza").style.textShadow = `0px 0px 15px ${sombra}, 
+                                    0px 0px 30px ${sombra}, 
+                                    0px 0px 45px ${sombra}, 
+                                    0px 0px 60px ${sombra}`;  // Asigna el color directamente
 
     if(rareza == "●") document.querySelector(".rareza").style.top = "6.7%";
 
     if(rareza == "▲") {
         document.querySelector(".rareza").style.top = "9.4%";
-        document.querySelector(".rareza").style.fontSize = "40px";
+        document.querySelector(".rareza").style.fontSize = "130px";
     }
 
     if(rareza == "◆") {
         document.querySelector(".rareza").style.top = "9.9%";
-        document.querySelector(".rareza").style.fontSize = "40px";
+        document.querySelector(".rareza").style.fontSize = "130px";
     }
 
     if(rareza == "✦") {
         document.querySelector(".rareza").style.top = "8.7%";
-        document.querySelector(".rareza").style.fontSize = "50px";
+        document.querySelector(".rareza").style.fontSize = "160px";
     }
 
     if(rareza == "★") {
         document.querySelector(".rareza").style.top = "8.2%";
-        document.querySelector(".rareza").style.fontSize = "50px";
+        document.querySelector(".rareza").style.fontSize = "160px";
     }
 
     if(rareza == "✪") {
         document.querySelector(".rareza").style.top = "8.5%";
-        document.querySelector(".rareza").style.fontSize = "50px";
+        document.querySelector(".rareza").style.fontSize = "160px";
     }
 
     ajustarFondo();
@@ -117,8 +126,12 @@ function crearcarta() {
 
 function formatNumber(number) {
     const tipocarta = document.querySelector("#tipo_carta").value;
+    const elemento = document.querySelector("#elemento").value;
+    const nombre = String(document.querySelector("#nombre").value);
     let numero = "";
     if(tipocarta == "Hechizo") numero = "H";
+    else if(elemento == "Abominación") numero = "X";
+    else if(nombre.includes("Recurso")) numero = "R";
     else numero = "A";
     return numero + number.toString().padStart(4, '0');
 }
@@ -186,11 +199,11 @@ function ajustarFondo() {
         const alturaTexto = textoCentro.offsetHeight;
 
         // Ajustar la posición del fondo para que suba con más texto
-        fondo.style.top = `calc(55% - ${alturaTexto}px)`; // Se sube a medida que el texto crece
+        fondo.style.top = `calc(55% - ${alturaTexto}px - 10px)`; // Se sube a medida que el texto crece
 
-        if(document.querySelector(".hechizocosto1")) document.querySelector(".hechizocosto1").style.top = `calc(69% - ${alturaTexto}px)`; // Se sube a medida que el texto crece
-        if(document.querySelector(".hechizocosto2")) document.querySelector(".hechizocosto2").style.top = `calc(69% - ${alturaTexto}px)`; // Se sube a medida que el texto crece
-        if(document.querySelector(".hechizocosto3")) document.querySelector(".hechizocosto3").style.top = `calc(69% - ${alturaTexto}px)`; // Se sube a medida que el texto crece
+        if(document.querySelector(".hechizocosto1")) document.querySelector(".hechizocosto1").style.top = `calc(69% - ${alturaTexto}px - 10px)`; // Se sube a medida que el texto crece
+        if(document.querySelector(".hechizocosto2")) document.querySelector(".hechizocosto2").style.top = `calc(69% - ${alturaTexto}px - 10px)`; // Se sube a medida que el texto crece
+        if(document.querySelector(".hechizocosto3")) document.querySelector(".hechizocosto3").style.top = `calc(69% - ${alturaTexto}px - 10px)`; // Se sube a medida que el texto crece
     }
 
 }
@@ -202,13 +215,13 @@ function ajustarTexto() {
 
         // Ajustar el tamaño de la fuente según la longitud del texto
         if (textoLength > 15) {
-            nombreCarta.style.fontSize = 'calc(16px + 0.3vw)';  // Reduce el tamaño si el texto es largo
+            nombreCarta.style.fontSize = 'calc(68px + 0.3vw)';  // Reduce el tamaño si el texto es largo
             nombreCarta.style.top = '1%';  // Reduce el tamaño si el texto es largo
         } else if (textoLength > 10) {
-            nombreCarta.style.fontSize = 'calc(16px + 0.4vw)';  // Ajuste mediano
+            nombreCarta.style.fontSize = 'calc(68px + 0.4vw)';  // Ajuste mediano
             nombreCarta.style.top = '0.9%';  // Ajuste mediano
         } else {
-            nombreCarta.style.fontSize = 'calc(16px + 0.5vw)';  // Ajuste para textos pequeños
+            nombreCarta.style.fontSize = 'calc(68px + 0.5vw)';  // Ajuste para textos pequeños
             nombreCarta.style.top = '0.8%';  // Ajuste para textos pequeños
         }
     }

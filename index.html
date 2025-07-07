@@ -57,7 +57,7 @@
             </div>
             Nombre: <input type="text" id="nombre" value="Aguas turbulentas">
             <input id="color-nombre" type="color" value="#ffffff"><input id="color-nombre-sombra" type="color">
-            Elemento: <select name="Elemento" id="elemento">
+            Elemento: <select name="Elemento" id="elemento" onchange="costoshechizos()">
                 <option value="Agua" selected>Agua</option>
                 <option value="Fuego">Fuego</option>
                 <option value="Tierra">Tierra</option>
@@ -89,7 +89,7 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat enim consectetur, nulla eius alias velit minus ipsam porro atque esse?
                 </div>
             </div>
-            <div id="resultado" style="text-align: center; width: 100%;"></div>
+            <div id="resultado" style="text-align: center; width: 100%; zoom: 0.3;"></div>
             <button id="descargarBtn" class="btn btn-danger m-4">Descargar carta</button>
         </div>
     </div>
@@ -98,7 +98,7 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script>
         function costoshechizos() {
-            if(document.querySelector('#tipo_carta').value == 'Hechizo') 
+            if(document.querySelector('#tipo_carta').value == 'Hechizo' || document.querySelector("#elemento").value == "Abominación") 
             { document.querySelector('#costos_hechizos').style.display = 'flex' } 
             else { document.querySelector('#costos_hechizos').style.display = 'none' }
         }

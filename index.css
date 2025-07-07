@@ -8,12 +8,12 @@
 
 .cards {
     display:block;
-    width: 12.6cm; /* Ajusta según el tamaño que quieras */
-    height: 17.2cm; /* Ajusta según el tamaño que quieras */
+    width: 1491px; /* 12.6cm */
+    height: 2032px; /* 17.2cm */
     position: relative; /* Necesario para el posicionamiento absoluto de las imágenes */
     overflow: hidden; /* Oculta cualquier contenido fuera del contenedor */
     text-align: center;
-    border:2px solid black;
+    border:8px solid black;
     margin: 0;
     padding: 0;
 }
@@ -34,7 +34,6 @@
 /* Posicionamos el fondo de la carta */
 .fondo-carta {
     position: absolute;
-    top: 90px;
     left:0px;
     z-index: 1; /* Fondo detrás de los marcos */
 }
@@ -42,8 +41,8 @@
 .hechizocosto1, .hechizocosto2, .hechizocosto3 {
     position: absolute; /* Posiciona el nombre sobre el marco superior */
     z-index:9999;
-    width:3.5cm;
-    height:3.5cm;
+    width:413.3858px;
+    height:413.3858px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -69,10 +68,10 @@
 }
 
 .numero_costo {
-    font-size: 1.1cm;
+    font-size: 130px;
     transform: translate(-0.5%, 58%);
     color:white;
-    text-shadow: 0px 0px 5px #000, 0px 0px 10px #000, 0px 0px 15px #000, 0px 0px 20px #000;
+    text-shadow: 0px 0px 24px #000, 0px 0px 40px #000, 0px 0px 45px #000, 0px 0px 70px #000;
 }
 
 .nombre-carta {
@@ -87,83 +86,83 @@
     max-width: 100%; /* No permite que el nombre ocupe más del 100% del contenedor */
     white-space: nowrap; /* Evita que el texto se divida en varias líneas */
     overflow: hidden; /* Oculta cualquier texto que sobrepase el área */
-    
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 40px; /* Bordes redondeados */
 }
 
 .circle-number {
     display: inline-flex;              /* Cambiar a inline-flex para control total sobre alineación */
     align-items: center;               /* Centra verticalmente el texto dentro del círculo */
     justify-content: center;           /* Centra horizontalmente el texto dentro del círculo */
-    width: 24px;                       /* Ancho del círculo */
-    height: 24px;                      /* Alto del círculo */
+    width: 82px;                       /* Ancho del círculo */
+    height: 82px;                      /* Alto del círculo */
     border-radius: 50%;                /* Hace que el fondo sea circular */
     text-align: center;                /* Centra el texto horizontalmente */
-    line-height: 24px;                 /* Alinea el número verticalmente en el centro */
+    line-height: 82px;                 /* Alinea el número verticalmente en el centro */
     color: white;                      /* Color del texto dentro del círculo */
-    font-size: 16px;                   /* Tamaño del número dentro del círculo */
-    margin-right: 4px;                 /* Espacio entre los números y el texto */
+    font-size: 42px;                   /* Tamaño del número dentro del círculo */
+    margin-right: 10px;                 /* Espacio entre los números y el texto */
 }
 
 .texto-centro {
     position: absolute; /* Necesario para que 'bottom' funcione */
-    bottom: 14%; /* Se coloca a 20px desde el borde inferior de la carta */
+    bottom: calc(14% + 15px); /* Se coloca a 20px desde el borde inferior de la carta */
     text-align: justify;
-    left: 20px; /* Puedes ajustar este valor según lo necesites */
-    right: 20px; /* Espacio a la derecha */
-    font-size: 16px;
+    left: 70px; /* Puedes ajustar este valor según lo necesites */
+    right: 70px; /* Espacio a la derecha */
+    font-size: 52px;
     justify-content: space-between; /* Esto separará los elementos en los extremos */
     z-index: 50; /* Asegura que el texto esté por encima de las imágenes */
+    line-height: 72px;                 /* Alinea el número verticalmente en el centro */
     font-family:'Roboto';
 }
 
 .orange {
     color: rgb(255, 0, 221);        /* Fondo amarillo para 'tr' */
     font-weight: bold;
-    padding:2px;
+    padding:4px;
 }
 
 .yellow {
     color: yellow;        /* Fondo amarillo para 'tr' */
     font-weight: bold;
-    padding:2px;
+    padding:4px;
 }
 
 .white {
     background-color: white;        /* Fondo amarillo para 'tr' */
     font-weight: bold;
     border:1px solid black;
-    padding:2px;
+    padding:4px;
 }
 
 .green {
     color: green;         /* Fondo verde para 'ti' */
     font-weight: bold;
-    padding:2px;
+    padding:4px;
 }
 
 .red {
     color: #FF5733;       /* Fondo rojo anaranjado para 'fu' */
     font-weight: bold;
-    padding:2px;
+    padding:4px;
 }
 
 .purple {
     color: #800080;       /* Fondo violeta para 'fa' */
     font-weight: bold;
-    padding:2px;
+    padding:4px;
 }
 
 .blue {
     color: blue;          /* Fondo azul para 'ag' */
     font-weight: bold;
-    padding:2px;
+    padding:4px;
 }
 
 .highlighted-text {
-    border-radius: 4px;  /* Bordes redondeados */
-    font-weight: 500;
-    letter-spacing: 1px;
+    border-radius: 22px;  /* Bordes redondeados */
+    font-weight: 800;
+    letter-spacing: 3.5px;
 }
 
 /* Posicionamos la imagen del marco inferior */
@@ -180,11 +179,11 @@
 }
 
 .marco-fondo {
-    top: -260px; /* Justo en la parte inferior de la carta */
+    top: -690px; /* Justo en la parte inferior de la carta */
     z-index: 5; /* Asegura que el marco inferior esté por encima del fondo */
     opacity: .6;
     width: 120%; /* Ocupa todo el ancho de la carta */
-    transform: translateY(-8px) translateX(-44px); /* Ajusta la posición para que quede en su lugar */
+    transform: translateY(-34px) translateX(-142px); /* Ajusta la posición para que quede en su lugar */
 }
 
 .clan-icono {
@@ -197,7 +196,7 @@
     margin: 0 auto;
     z-index: 15;
     border-radius: 100%;
-    text-shadow: 0 0 5px rgba(0,0,0,1);
+    text-shadow: 0 0 25px rgba(0,0,0,1);
 }
 
 .marco-icono {
@@ -217,18 +216,18 @@ h5 {
     position: relative; /* Asegura que el texto se pueda apilar correctamente */
     z-index: 20; /* Asegura que el texto esté por encima de las imágenes */
     color: white; /* Color del texto */
-    font-size: 34px; /* Tamaño del texto */
+    font-size: 112px; /* Tamaño del texto */
     margin: 0;
-    padding: 5px 0;
+    padding: 25px 0;
     text-align: center; /* Centra el texto */
 }
 
 /* Clase que maneja la posición de los textos en la parte inferior */
 .texto-bajo {
     position: absolute; /* Necesario para que 'bottom' funcione */
-    bottom: 4.5%; /* Se coloca a 20px desde el borde inferior de la carta */
-    left: 5px; /* Puedes ajustar este valor según lo necesites */
-    right: 5px; /* Espacio a la derecha */
+    bottom: 3.7%; /* Se coloca a 20px desde el borde inferior de la carta */
+    left: 10px; /* Puedes ajustar este valor según lo necesites */
+    right: 10px; /* Espacio a la derecha */
     display: flex;
     justify-content: space-between; /* Esto separará los elementos en los extremos */
     z-index: 30; /* Asegura que el texto esté por encima de las imágenes */
@@ -238,7 +237,7 @@ h5 {
 
 /* Si tienes más de un h5, esto los alinea */
 .texto-bajo h5 {
-    font-size: 20px; /* Tamaño del texto para que quepan bien en la parte inferior */
+    font-size: 65px; /* Tamaño del texto para que quepan bien en la parte inferior */
     margin: 0;
     color: white; /* Cambia el color del texto si lo necesitas */
 }
@@ -246,7 +245,7 @@ h5 {
 .rareza {
     position: absolute;
     z-index:999;
-    font-size:60px;
+    font-size:190px;
     left: 50%;
     transform: translateX(-50%); /* Centra el texto horizontalmente */
     color:white;
