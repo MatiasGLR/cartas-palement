@@ -18,6 +18,10 @@
     padding: 0;
 }
 
+.fa-solid {
+    text-shadow: 0 0 5px rgba(0,0,0,1);
+}
+
 /* Aseguramos que las imágenes ocupen todo el ancho de la carta */
 .cards img {
     position: absolute; /* Permite que las imágenes se apilen */
@@ -126,6 +130,7 @@
     color: yellow;        /* Fondo amarillo para 'tr' */
     font-weight: bold;
     padding:4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 .white {
@@ -133,36 +138,42 @@
     font-weight: bold;
     border:1px solid black;
     padding:4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 .green {
     color: green;         /* Fondo verde para 'ti' */
     font-weight: bold;
     padding:4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 .red {
     color: #FF5733;       /* Fondo rojo anaranjado para 'fu' */
     font-weight: bold;
     padding:4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 .purple {
     color: #800080;       /* Fondo violeta para 'fa' */
     font-weight: bold;
     padding:4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 .blue {
     color: blue;          /* Fondo azul para 'ag' */
     font-weight: bold;
     padding:4px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 .highlighted-text {
     border-radius: 22px;  /* Bordes redondeados */
     font-weight: 800;
     letter-spacing: 3.5px;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
 }
 
 /* Posicionamos la imagen del marco inferior */
