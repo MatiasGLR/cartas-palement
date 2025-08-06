@@ -8,8 +8,8 @@
 
 .cards {
     display:block;
-    width: 1491px; /* 12.6cm */
-    height: 2032px; /* 17.2cm */
+    width: 1491px; /* 12.6cm  6.3cm */
+    height: 2032px; /* 17.2cm 8.6cm*/
     position: relative; /* Necesario para el posicionamiento absoluto de las imágenes */
     overflow: hidden; /* Oculta cualquier contenido fuera del contenedor */
     text-align: center;
